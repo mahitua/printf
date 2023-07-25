@@ -18,11 +18,11 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-	for (count = 0; format && format[count] != '\0'; i++)
+	for (count = 0; format && format[count] != '\0'; count++)
 	{
 		if (format[count] != '%')
 		{
-			buffer[buff_ind++] = format[i];
+			buffer[buff_ind++] = format[count];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
 			/* write(1, &format[count], 1);*/
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			width = get_width(format, &count, list);
 			precision = get_precision(format, &count, list);
 			size = get_size(format, &count);
-			++i;
+			++count;
 			printed = handle_print(format, &count, list, buffer,
 					flags, width, precision, size);
 			if (printed == -1)
