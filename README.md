@@ -1,1 +1,3 @@
-printf fuction prooject done with me and my partner Wondwossen Asegid
+printf fuction project done with Melat and my partner Wondwosen Asegid.
+our first group project.
+
